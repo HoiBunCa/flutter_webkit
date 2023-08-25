@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'collapsed_icon_model.dart';
 
 class CollapsedIcon extends StackedView<CollapsedIconModel> {
-  const CollapsedIcon(BuildContext context, isCollapsed, {super.key});
+  const CollapsedIcon(BuildContext context, isCollapsed, icon, {super.key});
 
   @override
   Widget builder(
@@ -22,9 +22,6 @@ class CollapsedIcon extends StackedView<CollapsedIconModel> {
             height: viewModel.size,
             child: Icon(viewModel.getIcon(), color: Colors.black),
           ),
-          onTap: () {
-            viewModel.toggleCollapsedButton();
-          },
         ),
       ),
     );

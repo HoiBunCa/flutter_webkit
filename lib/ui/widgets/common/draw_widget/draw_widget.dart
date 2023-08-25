@@ -17,7 +17,7 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
   ) {
     return Container(
       width: viewModel.getWidth(context),
-      height: MediaQuery.of(context).size.height * 0.89,
+      height: MediaQuery.of(context).size.height * 0.86,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -25,8 +25,25 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       // color: Colors.white,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+
+          InkWell(
+
+            child: Container(
+              width: double.infinity,
+              height: 50,
+              decoration: BoxDecoration(
+                color: Color(0xff85B7F1),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(viewModel.getIcon(), color: Colors.black, size: 15),
+            ) ,
+
+            onTap: () {
+              viewModel.toggleCollapsedButton();
+            },
+          ),
+          SizedBox(height: 15),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -42,7 +59,6 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
                   viewModel.tapMenu('Dashboard');
                 },
               ),
-
               SizedBox(height: 15),
               InkWell(
                 child: MenuTitle(
@@ -59,23 +75,7 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
 
             ],
           ),
-          Column(
-            children: [
-              Container(
-                // margin: viewModel.getMargin(),
-                child: InkWell(
-                  child: Container(
-                    width: double.infinity,
-                    height: viewModel.size,
-                    child: Icon(viewModel.getIcon(), color: Colors.black),
-                  ),
-                  onTap: () {
-                    viewModel.toggleCollapsedButton();
-                  },
-                ),
-              ),
-            ],
-          )
+
         ],
       ),
     );

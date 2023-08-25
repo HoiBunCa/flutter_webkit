@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../top_bar_widget/top_bar_widget_model.dart';
+import 'collapsed_icon/collapsed_icon.dart';
 
 class DrawWidgetModel extends BaseViewModel {
 
@@ -23,7 +24,7 @@ class DrawWidgetModel extends BaseViewModel {
   }
 
   getIcon() {
-    return isCollapsed ? Icons.arrow_forward_ios : Icons.arrow_back_ios;
+    return isCollapsed ? Icons.menu_outlined : Icons.menu_outlined;
   }
 
   getAlignment() {

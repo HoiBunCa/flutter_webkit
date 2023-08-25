@@ -41,7 +41,7 @@ class MenuTitle extends StackedView<MenuTitleModel> {
               color: viewModel.getIconColor(active),
             ),
           ),
-          const SizedBox(
+          if (!isCollapse) const SizedBox(
             width: 10,
           ),
           if (!isCollapse) Expanded(
