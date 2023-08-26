@@ -24,7 +24,6 @@ class MenuTitle extends StackedView<MenuTitleModel> {
     MenuTitleModel viewModel,
     Widget? child,
   ) {
-
     return Container(
         height: 50,
         width: double.infinity,
@@ -41,18 +40,20 @@ class MenuTitle extends StackedView<MenuTitleModel> {
               color: viewModel.getIconColor(active),
             ),
           ),
-          if (!isCollapse) const SizedBox(
-            width: 10,
-          ),
-          if (!isCollapse) Expanded(
-              flex: 5,
-              child: Text(
-                title,
-                style: TextStyle(
-                    fontSize: 20,
-                    color: viewModel.getTextColor(active),
-                    fontWeight: FontWeight.bold),
-              )) ,
+          if (!isCollapse)
+            const SizedBox(
+              width: 10,
+            ),
+          if (!isCollapse)
+            Expanded(
+                flex: 5,
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: viewModel.getTextColor(active),
+                      fontWeight: FontWeight.bold),
+                )),
         ]));
   }
 

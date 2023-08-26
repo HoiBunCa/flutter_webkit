@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
+import '../search_field/search_field.dart';
 import 'top_bar_widget_model.dart';
 
 class TopBarWidget extends StackedView<TopBarWidgetModel> {
@@ -19,15 +20,19 @@ class TopBarWidget extends StackedView<TopBarWidgetModel> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              const Text("LOGO"),
-              const SizedBox(
-                width: 10,
-              ),
-              const Text("Search")
-            ],
+          Container(
+            width: 400,
+            child: Row(
+              children: [
+                Image.asset("../assets/images/tima_logo.png"),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text("SEARCH")
+              ],
+            ),
           ),
+
           const Row(
             children: [
               Text("DARK MODE"),

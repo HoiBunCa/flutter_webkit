@@ -3,16 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../top_bar_widget/top_bar_widget_model.dart';
-import 'collapsed_icon/collapsed_icon.dart';
 
 class DrawWidgetModel extends BaseViewModel {
-
   bool isCollapsed = false;
   double size = 52;
   static const active = false;
   var mapMenuActive = {};
-
-
 
   getWidth(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -60,5 +56,4 @@ class DrawWidgetModel extends BaseViewModel {
   getMenuTitle(String s) {
     return !isCollapsed ? s : '';
   }
-
 }

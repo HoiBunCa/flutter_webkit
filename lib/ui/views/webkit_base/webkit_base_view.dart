@@ -25,7 +25,8 @@ class WebkitBaseView extends StackedView<WebkitBaseViewModel> {
             Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
                   child: DrawWidget(),
                 ),
                 Container(

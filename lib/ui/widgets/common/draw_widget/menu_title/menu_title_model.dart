@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 class MenuTitleModel extends BaseViewModel {
-
-
   getTextColor(isActive) {
     return isActive ? Color(0xff1B81F8) : Colors.black;
   }
@@ -17,5 +15,4 @@ class MenuTitleModel extends BaseViewModel {
   getContainerColor(isActive) {
     return isActive ? Color(0xffD4E6FB) : Colors.white;
   }
-
 }

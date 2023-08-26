@@ -8,11 +8,7 @@ class TopBarWidgetModel extends BaseViewModel {
 
   getHeight(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    return height * 0.08;
+    return height * 0.1;
   }
 
-  void toggleCollapsed() {
-    isCollapsed = !isCollapsed;
-    rebuildUi();
-  }
 }

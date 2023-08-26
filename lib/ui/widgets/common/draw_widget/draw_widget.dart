@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../common/ui_helpers.dart';
-import 'collapsed_icon/collapsed_icon.dart';
 import 'draw_widget_model.dart';
 import 'menu_title/menu_title.dart';
 
@@ -17,7 +16,7 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
   ) {
     return Container(
       width: viewModel.getWidth(context),
-      height: MediaQuery.of(context).size.height * 0.86,
+      height: MediaQuery.of(context).size.height * 0.82,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -26,19 +25,16 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
       // color: Colors.white,
       child: Column(
         children: [
-
           InkWell(
-
             child: Container(
               width: double.infinity,
               height: 50,
               decoration: BoxDecoration(
-                color: Color(0xff85B7F1),
+                color: Color(0xffC9CCD0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Icon(viewModel.getIcon(), color: Colors.black, size: 15),
-            ) ,
-
+            ),
             onTap: () {
               viewModel.toggleCollapsedButton();
             },
@@ -54,7 +50,6 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
                   icon: Icons.dashboard_outlined,
                   isCollapse: viewModel.isCollapsed,
                 ),
-
                 onTap: () {
                   viewModel.tapMenu('Dashboard');
                 },
@@ -66,16 +61,13 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
                   active: viewModel.checkActive('Ocr'),
                   icon: Icons.book_outlined,
                   isCollapse: viewModel.isCollapsed,
-
                 ),
                 onTap: () {
                   viewModel.tapMenu('Ocr');
                 },
               ),
-
             ],
           ),
-
         ],
       ),
     );
@@ -87,5 +79,3 @@ class DrawWidget extends StackedView<DrawWidgetModel> {
   ) =>
       DrawWidgetModel();
 }
-
-
